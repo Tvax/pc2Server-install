@@ -1,7 +1,12 @@
 #!/bin/bash
 
 steamcmdInstall(){
-	sudo apt install steamcmd;
+	sudo apt-get install lib32gcc1;
+	mkdir steamcmd
+	cd steamcmd
+	wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz
+	tar -xvzf steamcmd_linux.tar.gz
+	cd ..
 }
 
 pc2Download(){
@@ -14,7 +19,7 @@ pc2Download(){
 
 	read -e -p "Path to download Procject Cars 2's server files : " -i "$HOME/PC2" directory;
 	mkdir -p "$directory";
-	steamcmd +@sSteamCmdForcePlatformType windows +login $username $password +force_install_dir $directory +app_update 413770 +quit
+	steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType windows +login $username $password +force_install_dir $directory +app_update 413770 +quit
 }
 
 ##Check if system compatible before install
