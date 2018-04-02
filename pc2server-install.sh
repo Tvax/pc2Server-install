@@ -19,7 +19,7 @@ pc2Download(){
 
 	read -e -p "Path to download Procject Cars 2's server files : " -i "$HOME/PC2" directory;
 	mkdir -p "$directory";
-	steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType windows +login $username $password +force_install_dir $directory +app_update 413770 +quit
+	steamcmd/steamcmd.sh +login $username $password +force_install_dir $directory +app_update 413770 +quit
 }
 
 ##Check if system compatible before install
